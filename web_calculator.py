@@ -4,7 +4,7 @@ app=Flask(__name__)
 
 @app.route("/")
 def home_form():
-    return render_template("home.html")
+    return render_template("calculator.html")
 
 @app.route("/home", methods=["POST"])
 def calculate():
@@ -13,13 +13,13 @@ def calculate():
     operand2 = float(request.form['operand2'])
     total = float()
     if operator == "+":
-        result = operand1 + operand2
+        total = operand1 + operand2
     elif operator == "-":
-        result = operand1 - operand2
+        total = operand1 - operand2
     elif operator == "*":
-        result = operand1 * operand2
+        total = operand1 * operand2
     elif operator == "/":
-        result = operand1 / operand2
+        total = operand1 / operand2
 
     return render_template("landing.html", result=total)
 
