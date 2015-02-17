@@ -9,7 +9,7 @@ def home_form():
 @app.route("/home", methods=["POST"])
 def calculate():
     operand1 = float(request.form['operand1'])
-    operator = request.select['operator']
+    operator = request.form['operator']
     operand2 = float(request.form['operand2'])
     total = float()
     if operator == "+":
